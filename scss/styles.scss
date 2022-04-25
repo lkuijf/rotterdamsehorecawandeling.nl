@@ -1,0 +1,208 @@
+$screenBreakpoint: 768px; // iPads, Tablets
+$screenBreakpointMobiles: 480px; // Mobile devices
+// $screenBreakpointExtra1: 960px; // Product-overview to 2 columns
+
+// $colorBlue: #31a3c4; // from logo
+// $colorBlueLight: #d4edf4; // from logo
+// $colorBlueDark: #1A3B77; // for header
+// $colorGold: #ceac61; // from logo
+// $colorGoldLight: #D8BD81; // for text-background
+// $colorGoldLighter: #ebdec0; // filters background
+// $colorGoldDark: #735a23; // 
+// $colorBlack: #232628; // text color, footer background
+
+$fontFamily: 'Poppins', sans-serif;
+
+$logoHolderHeight: 200px;
+$menuHeight: 50px;
+$contentStart: $logoHolderHeight + $menuHeight;
+$entryPadding: 500px;
+
+@mixin innerTextCentering {
+    width: 70%;
+    @media (max-width: $screenBreakpoint) {
+        width: 90%;
+    }
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// @mixin innerFlexResponsive {
+// }
+
+// @import 'inc/burger-menu.adapter';
+// @import 'inc/pagination';
+// @import 'inc/product';
+
+// body, html {
+//     margin: 0;
+//     padding: 0;
+// }
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    body {
+        margin: 0;
+        font-family: $fontFamily;
+        font-size: 16px;
+        input, select, textarea, button {
+            font-family: $fontFamily;
+            font-size: 16px;
+        }   
+        // background-color: darkslategrey;
+
+        // background-image: url('../statics/erasmusbrug.jpg');
+        // background-attachment: fixed;
+        // background-size: 100% auto;
+    }
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+#header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    #logoHolder {
+        height: $logoHolderHeight;
+        // background-color: #ecffec;
+        background-color: #fff;
+        text-align: center;
+        img {
+            height: 100%;
+            width: 100%;
+            max-height: $logoHolderHeight;
+            object-fit: contain;
+        }
+    }
+    #mNav {
+        ul {
+            margin: 0;
+            padding: 0;
+            background-color: #008100;
+            display: flex;
+            // align-items: stretch;
+            list-style-type: none;
+            li {
+                flex: 1 1 auto;
+                text-align: center;
+                a {
+                    display: block;
+                    height: 100%;
+                    padding: 0 5px;
+                    line-height: $menuHeight;
+                    text-decoration: none;
+                    color: #FFF;
+                    &.activeButton {
+                        background-color: #005700;
+                    }
+                    @media (min-width: $screenBreakpoint+1) {
+                        &:hover {
+                            background-color: #005700;
+                        }
+                    }
+                    @media (max-width: $screenBreakpointMobiles) {
+                        line-height: $menuHeight - 25px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+#contentWrapper {
+    @include innerTextCentering;
+    padding-top: $entryPadding;
+    a.anchorPoint {
+        display: block;
+        height: $contentStart;
+    }
+    .textcontent {
+        background-color: white;
+        margin-bottom: 300px;
+        padding: 50px;
+        min-height: 500px;
+        @media (max-width: $screenBreakpointMobiles) {
+            padding: 20px;
+        }
+        h1 {
+            color: #008100;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}
+.checkoutWrapper {
+    padding-top: 300px !important;
+}
+#footer {
+    background-color: #ecffec;
+    min-height: 300px;
+    div {
+        @include innerTextCentering;
+        padding: 50px;
+        @media (max-width: $screenBreakpointMobiles) {
+            padding: 20px;
+        }
+    }
+}
+.backgroundImage {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // object-position: 50% 0;
+    transition: opacity 0.3s linear;
+    opacity: 0;
+    &.activeImage {
+        opacity: 1;
+    }
+}
+form {
+    .fieldlist {
+        display: flex;
+        gap: 10px 20px;
+        padding-bottom: 10px;
+        // grid-template-columns: repeat(3, 1fr);
+        @media (max-width: $screenBreakpoint) {
+            display: grid;
+            // grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    textarea {
+        width: 60%;
+        @media (max-width: $screenBreakpoint) {
+            width: 100%;
+        }
+    }
+    @media (max-width: $screenBreakpoint) {
+        input {
+            width: 100%;
+        }
+    }
+}
+.errMsg {
+    color: red;
+}
+
+#msg {
+    transition: top 0.4s ease-out;
+    -webkit-transition: top 0.4s ease-out;
+    font-family: $fontFamily;
+    font-size: 16px;
+    color: #FFF;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    font-size: 1.5em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.success { background-color: #28a745; }
+    &.error { background-color: #dc3545; }
+    &.warning { background-color: #ffc107; }
+}
