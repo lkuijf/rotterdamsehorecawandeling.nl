@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+use Themosis\Core\HelloDolly;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +13,6 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+Artisan::command('hello', function () {
+    $this->comment(HelloDolly::lyric());
+})->describe('Display a lyric from the Hello, Dolly song sung by Louis Armstrong');

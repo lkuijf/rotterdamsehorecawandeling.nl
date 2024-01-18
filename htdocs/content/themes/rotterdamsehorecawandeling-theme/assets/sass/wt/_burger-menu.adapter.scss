@@ -1,0 +1,59 @@
+/*
+    Burger-menu
+    DO NOT ALTER THIS MIXIN
+*/
+@mixin burgerMenuAdapter {
+    .burger-label {
+        // cursor: pointer;
+        color: transparent; /* removes blinking cursor */
+        display: block;
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        top: 11px;
+        right: 11px;
+    }
+    .burger-label span {
+        margin: 0;
+        margin-bottom: 7px;
+        height: 5px;
+        background: #000;
+        border: 1px solid #000;
+        border-radius: 3px;
+        position: relative;
+        display: block;
+    }
+
+    #burger-check:checked {
+        ~ .burger-label span:nth-child(2) {
+            display: none;
+        }
+        ~ .burger-label span:nth-child(1) {
+            transform: rotate(45deg);
+            transition-duration: 0.3s;
+            width: 45px;
+            top: 12px;
+            left: -6px;
+        }
+        ~ .burger-label span:nth-child(3) {
+            transform: rotate(-45deg);
+            transition-duration: 0.3s;
+            width: 45px;
+            top: 0px;
+            left: -6px;
+        }
+    }
+    #burger-check ~ div ul {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0px;
+        transition: width 0.5s;
+        position: absolute;
+        top: 54px;
+        right: 0;
+        z-index: 1;
+    }
+    #burger-check:checked ~ div ul {
+        width: 90%;
+    }
+}

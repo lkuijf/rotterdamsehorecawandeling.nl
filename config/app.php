@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -12,8 +11,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Themosis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -22,10 +20,9 @@ return [
     |
     | This value determines the "environment" your application is currently
     | running in. This may determine how you prefer to configure various
-    | services the application utilizes. Set this in your ".env" file.
+    | services your application utilizes. Set this in your ".env" file.
     |
     */
-
     'env' => env('APP_ENV', 'production'),
 
     /*
@@ -38,23 +35,46 @@ return [
     | application. If disabled, a simple generic error page is shown.
     |
     */
-
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
     | Application URL
     |--------------------------------------------------------------------------
     |
-    | This URL is used by the console to properly generate URLs when using
-    | the Artisan command line tool. You should set this to the root of
-    | your application so that it is used when running Artisan tasks.
-    |
     */
-
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL', null),
+    /*
+    |--------------------------------------------------------------------------
+    | WordPress
+    |--------------------------------------------------------------------------
+    |
+    */
+    'wp' => [
+        'url' => env('WP_URL', 'http://localhost/cms'),
+        'dir' => env('WP_DIR', 'cms')
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Charset Encoding
+    |--------------------------------------------------------------------------
+    |
+    */
+    'charset' => env('APP_CHARSET', 'UTF-8'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Locale
+    |--------------------------------------------------------------------------
+    |
+    | The application locale determines the default locale that will be used
+    | by the translation service provider coming from the Illuminate package, not
+    | directly the WordPress behavior.
+    |
+    */
+    'locale' => 'en_US',
 
     /*
     |--------------------------------------------------------------------------
@@ -66,47 +86,7 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-
     'timezone' => 'UTC',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Application Locale Configuration
-    |--------------------------------------------------------------------------
-    |
-    | The application locale determines the default locale that will be used
-    | by the translation service provider. You are free to set this value
-    | to any of the locales which will be supported by the application.
-    |
-    */
-
-    'locale' => 'en',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Application Fallback Locale
-    |--------------------------------------------------------------------------
-    |
-    | The fallback locale determines the locale to use when the current one
-    | is not available. You may change the value to correspond to any of
-    | the language folders that are provided through your application.
-    |
-    */
-
-    'fallback_locale' => 'en',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Faker Locale
-    |--------------------------------------------------------------------------
-    |
-    | This locale will be used by the Faker PHP library when generating fake
-    | data for your database seeds. For example, this will be used to get
-    | localized telephone numbers, street address information and more.
-    |
-    */
-
-    'faker_locale' => 'en_US',
 
     /*
     |--------------------------------------------------------------------------
@@ -118,10 +98,31 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication Unique Keys and Salts
+    |--------------------------------------------------------------------------
+    |
+    | Change these to different unique phrases!
+    | You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/}
+    | WordPress.org secret-key service. You can change these at any point in time to invalidate all existing cookies.
+    | This will force all users to have to log in again.
+    |
+    */
+    'salts' => [
+        'auth_key' => env('AUTH_KEY'),
+        'secure_auth_key' => env('SECURE_AUTH_KEY'),
+        'logged_in_key' => env('LOGGED_IN_KEY'),
+        'nonce_key' => env('NONCE_KEY'),
+        'auth_salt' => env('AUTH_SALT'),
+        'secure_auth_salt' => env('SECURE_AUTH_SALT'),
+        'logged_in_salt' => env('LOGGED_IN_SALT'),
+        'nonce_salt' => env('NONCE_SALT')
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -132,23 +133,21 @@ return [
     | request to your application. Feel free to add your own services to
     | this array to grant expanded functionality to your applications.
     |
+    | Some plugins may also extend the list of service providers directly.
+    |
     */
-
     'providers' => [
-
-        /*
-         * Laravel Framework Service Providers...
-         */
+        // Illuminate + Themosis providers
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
-        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+        Themosis\Core\Providers\ConsoleCoreServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
-        Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
         Illuminate\Notifications\NotificationServiceProvider::class,
@@ -156,25 +155,48 @@ return [
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
         Illuminate\Redis\RedisServiceProvider::class,
-        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,
+        Themosis\View\ViewServiceProvider::class,
+        Themosis\Ajax\AjaxServiceProvider::class,
+        Themosis\Asset\AssetServiceProvider::class,
+        Themosis\View\BladeServiceProvider::class,
+        Themosis\Core\Providers\CoreServiceProvider::class,
+        Themosis\Html\HtmlServiceProvider::class,
+        Themosis\Hook\HookServiceProvider::class,
+        Themosis\Field\FieldServiceProvider::class,
+        Themosis\Forms\FormServiceProvider::class,
+        Themosis\Metabox\MetaboxServiceProvider::class,
+        Themosis\Metabox\MetaboxRoutingServiceProvider::class,
+        Themosis\Page\PageServiceProvider::class,
+        Themosis\PostType\PostTypeServiceProvider::class,
+        Themosis\Taxonomy\TaxonomyServiceProvider::class,
+        Themosis\User\UserServiceProvider::class,
 
-        /*
-         * Package Service Providers...
-         */
-
-        /*
-         * Application Service Providers...
-         */
+        // Application providers
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+    ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application hooks
+    |--------------------------------------------------------------------------
+    |
+    | This array of hookable classes will be triggered when the WordPress
+    | hook API is loaded. Feel free to register as many hookable classes
+    | as you wish in order to organize your code.
+    |
+    */
+    'hooks' => [
+        App\Hooks\Application::class,
+        App\Hooks\Compat::class,
+        App\Hooks\Mail::class,
+        App\Hooks\Widgets::class
     ],
 
     /*
@@ -187,49 +209,84 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
-
     'aliases' => [
-
+        'Action' => Themosis\Support\Facades\Action::class,
+        'Ajax' => Themosis\Support\Facades\Ajax::class,
         'App' => Illuminate\Support\Facades\App::class,
-        'Arr' => Illuminate\Support\Arr::class,
-        'Artisan' => Illuminate\Support\Facades\Artisan::class,
+        'Artisan' => Themosis\Support\Facades\Artisan::class,
+        'Asset' => Themosis\Support\Facades\Asset::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
         'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,
-        'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
-        'Date' => Illuminate\Support\Facades\Date::class,
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
-        'Event' => Illuminate\Support\Facades\Event::class,
+        'Field' => Themosis\Support\Facades\Field::class,
         'File' => Illuminate\Support\Facades\File::class,
+        'Form' => Themosis\Support\Facades\Form::class,
+        'Filter' => Themosis\Support\Facades\Filter::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
-        'Http' => Illuminate\Support\Facades\Http::class,
-        'Js' => Illuminate\Support\Js::class,
-        'Lang' => Illuminate\Support\Facades\Lang::class,
-        'Log' => Illuminate\Support\Facades\Log::class,
+        'Html' => Themosis\Support\Facades\Html::class,
+        'Loop' => Themosis\Support\Facades\Loop::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
+        'Metabox' => Themosis\Support\Facades\Metabox::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
-        'Password' => Illuminate\Support\Facades\Password::class,
+        'Page' => Themosis\Support\Facades\Page::class,
+        'PostType' => Themosis\Support\Facades\PostType::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
-        'RateLimiter' => Illuminate\Support\Facades\RateLimiter::class,
-        'Redirect' => Illuminate\Support\Facades\Redirect::class,
-        // 'Redis' => Illuminate\Support\Facades\Redis::class,
+        'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,
-        'Response' => Illuminate\Support\Facades\Response::class,
-        'Route' => Illuminate\Support\Facades\Route::class,
+        'Route' => Themosis\Support\Facades\Route::class,
         'Schema' => Illuminate\Support\Facades\Schema::class,
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
-        'Str' => Illuminate\Support\Str::class,
+        'Taxonomy' => Themosis\Support\Facades\Taxonomy::class,
+        'TaxonomyField' => Themosis\Support\Facades\TaxonomyField::class,
+        'Twig' => Themosis\Support\Facades\Twig::class,
         'URL' => Illuminate\Support\Facades\URL::class,
+        'User' => Themosis\Support\Facades\User::class,
+        'UserField' => Themosis\Support\Facades\UserField::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
-
+        'View' => Illuminate\Support\Facades\View::class
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | WordPress Conditions
+    |--------------------------------------------------------------------------
+    |
+    | This array of conditions is used by the router to detect any WordPress
+    | request. The key is the WordPress conditional function signature and
+    | the value is a string or an array of matching conditions for the route.
+    |
+    */
+    'conditions' => [
+        'is_404' => '404',
+        'is_archive' => 'archive',
+        'is_attachment' => 'attachment',
+        'is_author' => 'author',
+        'is_category' => ['category', 'cat'],
+        'is_date' => 'date',
+        'is_day' => 'day',
+        'is_front_page' => ['/', 'front'],
+        'is_home' => ['home', 'blog'],
+        'is_month' => 'month',
+        'is_page' => 'page',
+        'is_paged' => 'paged',
+        'is_page_template' => 'template',
+        'is_post_type_archive' => ['post-type-archive', 'postTypeArchive'],
+        'is_search' => 'search',
+        'is_single' => 'single',
+        'is_singular' => 'singular',
+        'is_sticky' => 'sticky',
+        'is_subpage' => ['subpage', 'subpageof'],
+        'is_tag' => 'tag',
+        'is_tax' => 'tax',
+        'is_time' => 'time',
+        'is_year' => 'year'
+    ]
 ];

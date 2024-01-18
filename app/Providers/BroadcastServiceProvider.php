@@ -8,9 +8,7 @@ use Illuminate\Support\ServiceProvider;
 class BroadcastServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
+     * Bootstrap broadcasting service.
      */
     public function boot()
     {

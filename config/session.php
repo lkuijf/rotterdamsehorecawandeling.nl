@@ -3,7 +3,6 @@
 use Illuminate\Support\Str;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Session Driver
@@ -14,10 +13,9 @@ return [
     | you may specify any of the other wonderful drivers provided here.
     |
     | Supported: "file", "cookie", "database", "apc",
-    |            "memcached", "redis", "dynamodb", "array"
+    |            "memcached", "redis", "array"
     |
     */
-
     'driver' => env('SESSION_DRIVER', 'file'),
 
     /*
@@ -30,7 +28,6 @@ return [
     | to immediately expire on the browser closing, set that option.
     |
     */
-
     'lifetime' => env('SESSION_LIFETIME', 120),
 
     'expire_on_close' => false,
@@ -42,10 +39,9 @@ return [
     |
     | This option allows you to easily specify that all of your session data
     | should be encrypted before it is stored. All encryption will be run
-    | automatically by Laravel and you can use the Session like normal.
+    | automatically by the framework and you can use the Session like normal.
     |
     */
-
     'encrypt' => false,
 
     /*
@@ -58,7 +54,6 @@ return [
     | location may be specified. This is only needed for file sessions.
     |
     */
-
     'files' => storage_path('framework/sessions'),
 
     /*
@@ -71,8 +66,7 @@ return [
     | correspond to a connection in your database configuration options.
     |
     */
-
-    'connection' => env('SESSION_CONNECTION', null),
+    'connection' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -84,7 +78,6 @@ return [
     | provided for you; however, you are free to change this as needed.
     |
     */
-
     'table' => 'sessions',
 
     /*
@@ -92,15 +85,12 @@ return [
     | Session Cache Store
     |--------------------------------------------------------------------------
     |
-    | While using one of the framework's cache driven session backends you may
-    | list a cache store that should be used for these sessions. This value
-    | must match with one of the application's configured cache "stores".
-    |
-    | Affects: "apc", "dynamodb", "memcached", "redis"
+    | When using the "apc" or "memcached" session drivers, you may specify a
+    | cache store that should be used for these sessions. This value must
+    | correspond with one of the application's configured cache stores.
     |
     */
-
-    'store' => env('SESSION_STORE', null),
+    'store' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -112,7 +102,6 @@ return [
     | happen on a given request. By default, the odds are 2 out of 100.
     |
     */
-
     'lottery' => [2, 100],
 
     /*
@@ -125,10 +114,9 @@ return [
     | new session cookie is created by the framework for every driver.
     |
     */
-
     'cookie' => env(
         'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+        Str::slug(env('APP_NAME', 'themosis'), '_').'_session'
     ),
 
     /*
@@ -141,7 +129,6 @@ return [
     | your application but you are free to change this when necessary.
     |
     */
-
     'path' => '/',
 
     /*
@@ -154,7 +141,6 @@ return [
     | available to in your application. A sensible default has been set.
     |
     */
-
     'domain' => env('SESSION_DOMAIN', null),
 
     /*
@@ -164,11 +150,10 @@ return [
     |
     | By setting this option to true, session cookies will only be sent back
     | to the server if the browser has a HTTPS connection. This will keep
-    | the cookie from being sent to you when it can't be done securely.
+    | the cookie from being sent to you if it can not be done securely.
     |
     */
-
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -180,7 +165,6 @@ return [
     | the HTTP protocol. You are free to modify this option if needed.
     |
     */
-
     'http_only' => true,
 
     /*
@@ -190,12 +174,11 @@ return [
     |
     | This option determines how your cookies behave when cross-site requests
     | take place, and can be used to mitigate CSRF attacks. By default, we
-    | will set this value to "lax" since this is a secure default value.
+    | do not enable this as other CSRF protection services are in place.
     |
-    | Supported: "lax", "strict", "none", null
+    | Supported: "lax", "strict"
     |
     */
-
     'same_site' => 'lax',
 
 ];

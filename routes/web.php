@@ -1,30 +1,20 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\SubmitController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/**
+ * Application routes.
+ */
+Route::any('/', [PageController::class, 'front']);
+Route::any('page', [PageController::class, 'page']);
+Route::any('search', [PageController::class, 'search']);
 
-// Route::get('/', function () {
-//     return view('page');
-// });
-// Route::get('/{section}', [PagesController::class, 'showPage'])->defaults('page', false)->defaults('subpage', false)->where([
-//     'section' => '[a-z0-9_-]+',
-// ]);
-// Route::get('/', function () {
-//     return view('construction');
-// });
-Route::get('/', [PagesController::class, 'showOnePager'])->name('home');
-Route::get('/#tickets', [PagesController::class, 'showOnePager'])->name('aanmelden');
-Route::post('/submit-bestellen-form', [SubmitController::class, 'submitOrderForm']);
-Route::get('/bestelling/{id}', [PagesController::class, 'showOnePagerCheckout'])->where(['id' => '[0-9]+']);
+Route::any('single', [PostController::class, 'single']);
+Route::any('archive', [PostController::class, 'collection']);
+Route::any('category', [PostController::class, 'collection']);
+Route::any('tag', [PostController::class, 'collection']);
+Route::any('blog', [PostController::class, 'collection']);
+
+Route::fallback([PageController::class, 'error404']);
+

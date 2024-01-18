@@ -1,0 +1,25 @@
+0000000000000000000000000000000000000000 66aad26c64f354b7a2fce6bd1e82a024f19b9522 Leon Kuijf <leon.kuijf@gmail.com> 1704291840 +0100	commit (initial): first commit
+66aad26c64f354b7a2fce6bd1e82a024f19b9522 229af8c2d649c073642395774d064ee61fabc7c2 Leon Kuijf <leon.kuijf@gmail.com> 1704294840 +0100	commit: page route + demo settings page
+229af8c2d649c073642395774d064ee61fabc7c2 dc84b0df46684bd307ccf1e375f0314f897814c5 Leon Kuijf <leon.kuijf@gmail.com> 1704294991 +0100	commit: Carbon Fields Gutenberg Block
+dc84b0df46684bd307ccf1e375f0314f897814c5 730dad899794b88d3f96771c5c7bfca88be9b9cf Leon Kuijf <leon.kuijf@gmail.com> 1704789936 +0100	commit: added more routes
+730dad899794b88d3f96771c5c7bfca88be9b9cf 8c4c109982dc16c65a1f790d653bbfc0040fef8f Leon Kuijf <leon.kuijf@gmail.com> 1704794249 +0100	commit: added page- and postcontroller + routes to global application routes
+8c4c109982dc16c65a1f790d653bbfc0040fef8f b97cc96898717df692de625956cea4f5b31b49b8 Leon Kuijf <leon.kuijf@gmail.com> 1704802417 +0100	commit: added blog-page
+b97cc96898717df692de625956cea4f5b31b49b8 13cf03aa2f57ea79265de8486dc627aceed5a254 Leon Kuijf <leon.kuijf@gmail.com> 1704874484 +0100	commit: header and footer styles + website options admin page
+13cf03aa2f57ea79265de8486dc627aceed5a254 53178c83426ff3acefd852c0ff1a0274cf1e9510 Leon Kuijf <leon.kuijf@gmail.com> 1704875826 +0100	commit: set default field value, when array key not exists.
+53178c83426ff3acefd852c0ff1a0274cf1e9510 a74852c1fb92a5c0da3e6dd1fc2601566d012af1 Leon Kuijf <leon.kuijf@gmail.com> 1704875992 +0100	commit: syntax fixing
+a74852c1fb92a5c0da3e6dd1fc2601566d012af1 c9a4a1857625b844365cb406466b2c82b1460122 Leon Kuijf <leon.kuijf@gmail.com> 1704899934 +0100	commit: most of front end fixed, incl. parallax effect
+c9a4a1857625b844365cb406466b2c82b1460122 82b8f57121144a832aa0ecaa2f2c12b049f9950f Leon Kuijf <leon.kuijf@gmail.com> 1704968968 +0100	commit: better spacing between blocks
+82b8f57121144a832aa0ecaa2f2c12b049f9950f 83fd2ce50471f400bf217b251af438d04f2f8879 Leon Kuijf <leon.kuijf@gmail.com> 1705321035 +0100	commit: burger menu added
+83fd2ce50471f400bf217b251af438d04f2f8879 05213d24079628869abcd7b2b95896c91226b08a Leon Kuijf <leon.kuijf@gmail.com> 1705321311 +0100	commit: less padding on mobile
+05213d24079628869abcd7b2b95896c91226b08a b5e42fa3ec5db6d5c63485307dbb98228788480e Leon Kuijf <leon.kuijf@gmail.com> 1705326304 +0100	commit: better burger menu style
+b5e42fa3ec5db6d5c63485307dbb98228788480e 56b0e67d20f6fdda69dab54c325ec21816abab44 Leon Kuijf <leon.kuijf@gmail.com> 1705326624 +0100	commit: Somwhat better spacing of the anchor, on mobile and desktop
+56b0e67d20f6fdda69dab54c325ec21816abab44 5e0e83ba75e25206fbf3947b1f04380836e33f81 Leon Kuijf <leon.kuijf@gmail.com> 1705327332 +0100	commit: removed list margin + link styled
+5e0e83ba75e25206fbf3947b1f04380836e33f81 ec068486eeb2ff5822c875cb4053b35b14d89101 Leon Kuijf <leon.kuijf@gmail.com> 1705327634 +0100	commit: set menu styles to most important
+ec068486eeb2ff5822c875cb4053b35b14d89101 8ab582cdff1491cd1440da18b16fe02dc29ec5f8 Leon Kuijf <leon.kuijf@gmail.com> 1705328038 +0100	commit: set main menu as important for desktop
+8ab582cdff1491cd1440da18b16fe02dc29ec5f8 21e9ffa08b043db91193ad6ee7f484d1c8cfbb2e Leon Kuijf <leon.kuijf@gmail.com> 1705329989 +0100	commit: the first blcck some more space, for image to show correctly
+21e9ffa08b043db91193ad6ee7f484d1c8cfbb2e 381119c1e4bfc482739dd1723f9c9cdb1c8d1880 Leon Kuijf <leon.kuijf@gmail.com> 1705330165 +0100	commit: first block somewhat further, for image to show correctly
+381119c1e4bfc482739dd1723f9c9cdb1c8d1880 925705a53b9633bdee562243e5b789698e1a80e2 Leon Kuijf <leon.kuijf@gmail.com> 1705333092 +0100	commit: top top button + hide burger-menu when item is clicked
+925705a53b9633bdee562243e5b789698e1a80e2 924b7f29b64cddf679d29eadf2019215865cd4f4 Leon Kuijf <leon.kuijf@gmail.com> 1705397759 +0100	commit: better parallax, spacing etc.
+924b7f29b64cddf679d29eadf2019215865cd4f4 b3f7e6563dac8166f864b245d4a3d53cb6dc4d7c Leon Kuijf <leon.kuijf@gmail.com> 1705401334 +0100	commit: delay on transition effect. better xp.
+b3f7e6563dac8166f864b245d4a3d53cb6dc4d7c 9608eda97d236594a0b6257686054a44e64c8eef Leon Kuijf <leon.kuijf@gmail.com> 1705403098 +0100	commit: added fontello font
+9608eda97d236594a0b6257686054a44e64c8eef 2504a4b44e1eae49d3e5f493a853f333a72a07a8 Leon Kuijf <leon.kuijf@gmail.com> 1705580719 +0100	commit: removed color hover effect
