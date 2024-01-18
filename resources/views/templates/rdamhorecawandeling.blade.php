@@ -48,7 +48,7 @@
     @foreach ($data['website_options']['wt_website_background_images'] as $backImage)
         <img src="{{ str_replace('http://', 'https://', secure_asset($backImage)) }}" alt="" class="backgroundImage">
     @endforeach
-    <script src="{{ secure_asset('js/script.js') }}"></script>
+    {{-- <script src="{{ secure_asset('js/script.js') }}"></script> --}}
     @yield('before_closing_body_tag')
 </body>
 </html>
