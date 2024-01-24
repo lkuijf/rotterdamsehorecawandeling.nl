@@ -23,6 +23,9 @@
     &.show {
         bottom: 40px;
     }
+    span {
+        display: none;
+    }
     // &:hover:before {
     //     color: $colorGreen;
     // }

@@ -86,7 +86,7 @@
     </footer><!-- #colophon -->
 </div><!-- #page -->
 
-<a href="" id="toTop"></a>
+<a href="" id="toTop"><span>scroll to top</span></a>
 
 @footer
 
