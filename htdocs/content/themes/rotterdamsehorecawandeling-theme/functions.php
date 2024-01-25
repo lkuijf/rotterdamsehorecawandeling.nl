@@ -199,7 +199,7 @@ function myNewBlock(){
     // ->set_category( 'layout' )
     ->set_category( 'custom-wt-category', __( 'WT blocks' ), 'smiley' )
     ->set_icon( 'heart' )
-    ->set_keywords( [ __( 'wt' ), __( 'rotterdam' ), __( 'rdam' ), __( 'horeca' ), __( 'wandeling' ), __( 'custom' ), __( 'extra' ) ] )
+    ->set_keywords( [ __( 'wt' ), __( 'custom' ), __( 'extra' ) ] )
     // ->set_mode( 'both' )
     // ->set_editor_style( 'crb-my-shiny-gutenberg-block-stylesheet-BACKEND' )
     // ->set_style( 'crb-my-shiny-gutenberg-block-stylesheet-FRONTEND' )
