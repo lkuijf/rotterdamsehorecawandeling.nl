@@ -185,7 +185,7 @@ add_action( 'after_setup_theme', 'crb_load' );
 add_action( 'carbon_fields_register_fields', 'myNewBlock'  );
 
 function myNewBlock(){
-    Block::make( __( 'Parallax effect content' ) )
+    Block::make( __( 'My Shiny Gutenberg Block' ) ) // cannot be changed afterwards
 	->add_fields( array(
         Field::make( 'text', 'anchor', __( 'Anchor (Link menu items to this block with: #[Anchor])' ) ),
 		Field::make( 'text', 'heading', __( 'Block Heading' ) ),
@@ -195,11 +195,11 @@ function myNewBlock(){
         // Field::text('te1'),
         // Field::text('te2')
 	) )
-    ->set_description( __( 'A simple block with some sheittt' ) )
+    ->set_description( __( 'A simple block with some sheittt2' ) )
     // ->set_category( 'layout' )
     ->set_category( 'custom-wt-category', __( 'WT blocks' ), 'smiley' )
     ->set_icon( 'heart' )
-    ->set_keywords( [ __( 'wt' ), __( 'custom' ), __( 'extra' ) ] )
+    ->set_keywords( [ __( 'wt' ), __( 'rotterdamse' ), __( 'custom' ), __( 'extra' ) ] )
     // ->set_mode( 'both' )
     // ->set_editor_style( 'crb-my-shiny-gutenberg-block-stylesheet-BACKEND' )
     // ->set_style( 'crb-my-shiny-gutenberg-block-stylesheet-FRONTEND' )
