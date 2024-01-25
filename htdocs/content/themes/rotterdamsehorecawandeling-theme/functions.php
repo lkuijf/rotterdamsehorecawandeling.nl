@@ -185,7 +185,7 @@ add_action( 'after_setup_theme', 'crb_load' );
 add_action( 'carbon_fields_register_fields', 'myNewBlock'  );
 
 function myNewBlock(){
-    Block::make( __( 'Parallax effect content block' ) )
+    Block::make( __( 'My Shiny Gutenberg Block' ) )
 	->add_fields( array(
         Field::make( 'text', 'anchor', __( 'Anchor (Link menu items to this block with: #[Anchor])' ) ),
 		Field::make( 'text', 'heading', __( 'Block Heading' ) ),
@@ -195,7 +195,7 @@ function myNewBlock(){
         // Field::text('te1'),
         // Field::text('te2')
 	) )
-    ->set_description( __( 'Custom block designed for Rotterdamse Horeca Wandeling. Parallax effect for one-pager.' ) )
+    ->set_description( __( 'A simple block with some sheittt' ) )
     // ->set_category( 'layout' )
     ->set_category( 'custom-wt-category', __( 'WT blocks' ), 'smiley' )
     ->set_icon( 'heart' )
