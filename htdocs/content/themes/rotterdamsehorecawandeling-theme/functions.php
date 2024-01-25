@@ -195,11 +195,11 @@ function myNewBlock(){
         // Field::text('te1'),
         // Field::text('te2')
 	) )
-    ->set_description( __( 'A simple block with some sheittt2' ) )
+    ->set_description( __( 'Custom block made for Rotterdamse Horeca Wandeling. Parallax content effect for one-pager.' ) )
     // ->set_category( 'layout' )
     ->set_category( 'custom-wt-category', __( 'WT blocks' ), 'smiley' )
     ->set_icon( 'heart' )
-    ->set_keywords( [ __( 'wt' ), __( 'rotterdamse' ), __( 'custom' ), __( 'extra' ) ] )
+    ->set_keywords( [ __( 'wt' ), __( 'rotterdamse' ), __( 'rdam' ), __( 'horeca' ), __( 'wandeling' ), __( 'custom' ), __( 'extra' ) ] )
     // ->set_mode( 'both' )
     // ->set_editor_style( 'crb-my-shiny-gutenberg-block-stylesheet-BACKEND' )
     // ->set_style( 'crb-my-shiny-gutenberg-block-stylesheet-FRONTEND' )
