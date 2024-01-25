@@ -185,7 +185,7 @@ add_action( 'after_setup_theme', 'crb_load' );
 add_action( 'carbon_fields_register_fields', 'myNewBlock'  );
 
 function myNewBlock(){
-    Block::make( __( 'My Shiny Gutenberg Block' ) )
+    Block::make( __( 'Parallax effect content' ) )
 	->add_fields( array(
         Field::make( 'text', 'anchor', __( 'Anchor (Link menu items to this block with: #[Anchor])' ) ),
 		Field::make( 'text', 'heading', __( 'Block Heading' ) ),
