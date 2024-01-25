@@ -197,7 +197,7 @@ function myNewBlock(){
 	) )
     ->set_description( __( 'Custom block made for Rotterdamse Horeca Wandeling. Parallax content effect for one-pager.' ) )
     // ->set_category( 'layout' )
-    ->set_category( 'custom-wt-category', __( 'WT blocks' ), 'smiley' )
+    ->set_category( 'custom-wt-category', __( 'Rotterdamse Horeca Wandeling (by W.T. Media & Events)' ), 'smiley' )
     ->set_icon( 'heart' )
     ->set_keywords( [ __( 'wt' ), __( 'rotterdamse' ), __( 'rdam' ), __( 'horeca' ), __( 'wandeling' ), __( 'custom' ), __( 'extra' ) ] )
     // ->set_mode( 'both' )
