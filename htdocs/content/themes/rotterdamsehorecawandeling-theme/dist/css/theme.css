@@ -947,6 +947,9 @@ html {
 #toTop.show {
   bottom: 40px;
 }
+#toTop span {
+  display: none;
+}
 
 body {
   background-color: #EEE;
